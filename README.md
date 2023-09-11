@@ -1,6 +1,6 @@
 # PacketSniffer-Pcap
 
-![Packet Sniffer](image.png)
+
 
 PacketSniffer-Pcap is a powerful C program designed to capture and analyze network packets using the pcap library. It specializes in filtering and examining HTTP (Hypertext Transfer Protocol) packets, providing valuable insights into network traffic. This tool extracts essential details from HTTP packets, including Ethernet and IP addresses, source and destination ports, and the HTTP payload data.
 
@@ -12,7 +12,8 @@ Before diving into packet sniffing, ensure you have the following prerequisites 
 
 ```bash
 sudo apt-get install libpcap-dev
-Usage
+
+#Usage
 Let's get started with PacketSniffer-Pcap in just a few simple steps:
 
 Compile the Program
