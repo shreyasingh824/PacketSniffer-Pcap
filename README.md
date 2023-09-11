@@ -1,39 +1,67 @@
 # PacketSniffer-Pcap
-This C program is a simple network packet sniffer that uses the pcap library to capture network packets. It focuses on filtering and analyzing HTTP (Hypertext Transfer Protocol) packets. The program extracts and displays various details from HTTP packets, including Ethernet and IP addresses, source and destination ports, and HTTP payload data.
+
+![Packet Sniffer](image.png)
+
+PacketSniffer-Pcap is a powerful C program designed to capture and analyze network packets using the pcap library. It specializes in filtering and examining HTTP (Hypertext Transfer Protocol) packets, providing valuable insights into network traffic. This tool extracts essential details from HTTP packets, including Ethernet and IP addresses, source and destination ports, and the HTTP payload data.
+
 ## Prerequisites
 
-Before using this packet sniffer, ensure you have the following prerequisites installed:
+Before diving into packet sniffing, ensure you have the following prerequisites installed:
 
-- **libpcap**: This library allows the program to capture network packets. You can install it on Linux using the package manager, e.g., `sudo apt-get install libpcap-dev`.
+- **libpcap**: This indispensable library empowers the program to capture network packets. For Linux users, you can effortlessly install it using the package manager:
 
-## Usage
+```bash
+sudo apt-get install libpcap-dev
+Usage
+Let's get started with PacketSniffer-Pcap in just a few simple steps:
 
-To compile and use the packet sniffer, follow these steps:
+Compile the Program
+First, compile the program using a C compiler like GCC:
 
-1. **Compile the Program**: Use a C compiler (e.g., GCC) to compile the program:
-``bash
-
+bash
+Copy code
 # Compile the program
-gcc -o packet_sniffer packet_sniffer.c I/usr/Include -lpcap
+gcc -o packet_sniffer packet_sniffer.c -lpcap
 # Replace 'packet_sniffer' with your desired executable name
+Run the Program
+Execute the compiled program with the following command:
 
-#Run the program
+bash
+Copy code
 ./packet_sniffer [protocol] [number-of-packets]
-# [protocol]: The protocol to filter for (e.g., "tcp", "udp").
-# [number-of-packets]: The number of packets to capture.
+[protocol]: Specify the protocol you want to filter (e.g., "tcp", "udp").
+[number-of-packets]: Define the number of packets you wish to capture.
+Select a Network Interface
+The program will present a list of available network interfaces. Choose the desired interface for packet capture when prompted.
 
-# Select a Network Interface
-# The program will display a list of available network interfaces. Enter the name of the interface you want to use for packet capture when prompted.
+Start Packet Capture
+PacketSniffer-Pcap will commence capturing packets on the selected interface, based on the specified protocol and packet count.
 
-# Start Packet Capture
-# The program will start capturing packets on the selected interface based on the specified protocol and packet count.
+View Captured Data
+As packets flow in, the program will elegantly display essential information, including Ethernet source and destination MAC addresses, source and destination IP addresses, source and destination ports, and the HTTP payload data.
 
-# View Captured Data
-# As packets are captured, the program will display information such as Ethernet source and destination MAC addresses, source and destination IP addresses, source and destination ports, and the HTTP payload data.
+Extract Credentials and Cookies
+PacketSniffer-Pcap goes the extra mile by attempting to extract and display any usernames (uname), passwords (pass), or cookies (Cookie:) found within the HTTP payload data.
 
-# Extract Credentials and Cookies
-# The program will also attempt to extract and display any username (uname), password (pass), or cookies (Cookie:) found in the HTTP payload data.
+Finish
+To gracefully halt the packet capture, simply press Ctrl+C. The program will courteously bid farewell with a "Done with packet sniffing!" message before exiting.
 
-# Finish
-# To stop the packet capture, press Ctrl+C. The program will display "Done with packet sniffing!" and exit.
+Example
+Here's a quick example of how to use the program to capture TCP packets on interface eth0:
 
+bash
+Copy code
+./packet_sniffer tcp 10
+This command will capture the first 10 TCP packets on eth0, providing detailed packet information and extracting credentials and cookies when present in the HTTP payload data.
+
+Notes
+While PacketSniffer-Pcap primarily focuses on HTTP packets, you have the freedom to modify it to capture and analyze packets of other protocols. Simply adjust the protocol argument in the command line.
+
+Ensure that you possess the necessary permissions to capture packets on the selected network interface. Superuser (root) privileges or appropriate permissions may be required.
+
+The program leverages the libpcap library for efficient packet capture and network interface management.
+
+Always exercise caution when working with packet capture tools, as they have the potential to access sensitive information. Use them responsibly and solely for legitimate purposes such as network troubleshooting and security analysis.
+
+Disclaimer
+PacketSniffer-Pcap is provided exclusively for educational purposes and network analysis. Prior to usage, make sure to obtain the appropriate authorization and adhere to legal and ethical guidelines when deploying it on a network. Unauthorized packet capture or analysis may infringe on privacy and legal regulations.
