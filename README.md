@@ -11,7 +11,7 @@ Before using this packet sniffer, ensure you have the following prerequisites in
 To compile and use the packet sniffer, follow these steps:
 
 1. **Compile the Program**: Use a C compiler (e.g., GCC) to compile the program:
-
+``bash
 
 # Compile the program
 gcc -o packet_sniffer packet_sniffer.c I/usr/Include -lpcap
