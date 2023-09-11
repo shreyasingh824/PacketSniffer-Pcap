@@ -12,12 +12,12 @@ To compile and use the packet sniffer, follow these steps:
 
 1. **Compile the Program**: Use a C compiler (e.g., GCC) to compile the program:
 
-```bash
+
 # Compile the program
-gcc -o packet_sniffer packet_sniffer.c -lpcap
+gcc -o packet_sniffer packet_sniffer.c I/usr/Include -lpcap
 # Replace 'packet_sniffer' with your desired executable name
 
-# Run the program
+##Run the program
 ./packet_sniffer [protocol] [number-of-packets]
 # [protocol]: The protocol to filter for (e.g., "tcp", "udp").
 # [number-of-packets]: The number of packets to capture.
