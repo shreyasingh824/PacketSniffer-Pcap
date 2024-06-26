@@ -12,42 +12,43 @@ Before diving into packet sniffing, ensure you have the following prerequisites 
 
 ```bash
 sudo apt-get install libpcap-dev
-
-#Usage
+```
+# Usage
 Let's get started with PacketSniffer-Pcap in just a few simple steps:
 
-Compile the Program
+## Compile the Program
 First, compile the program using a C compiler like GCC:
-
-bash
-Copy code
 # Compile the program
+```bash
+
 gcc -o packet_sniffer packet_sniffer.c -lpcap
+```
 # Replace 'packet_sniffer' with your desired executable name
-Run the Program
+## Run the Program
 Execute the compiled program with the following command:
 
-bash
-Copy code
+```bash
+
 ./packet_sniffer [protocol] [number-of-packets]
 [protocol]: Specify the protocol you want to filter (e.g., "tcp", "udp").
 [number-of-packets]: Define the number of packets you wish to capture.
 Select a Network Interface
+```
 The program will present a list of available network interfaces. Choose the desired interface for packet capture when prompted.
 
-Start Packet Capture
+## Start Packet Capture
 PacketSniffer-Pcap will commence capturing packets on the selected interface, based on the specified protocol and packet count.
 
-View Captured Data
+## View Captured Data
 As packets flow in, the program will elegantly display essential information, including Ethernet source and destination MAC addresses, source and destination IP addresses, source and destination ports, and the HTTP payload data.
 
-Extract Credentials and Cookies
+## Extract Credentials and Cookies
 PacketSniffer-Pcap goes the extra mile by attempting to extract and display any usernames (uname), passwords (pass), or cookies (Cookie:) found within the HTTP payload data.
 
-Finish
+## Finish
 To gracefully halt the packet capture, simply press Ctrl+C. The program will courteously bid farewell with a "Done with packet sniffing!" message before exiting.
 
-Example
+## Example
 Here's a quick example of how to use the program to capture TCP packets on interface eth0:
 
 bash
@@ -55,7 +56,7 @@ Copy code
 ./packet_sniffer tcp 10
 This command will capture the first 10 TCP packets on eth0, providing detailed packet information and extracting credentials and cookies when present in the HTTP payload data.
 
-Notes
+## Notes
 While PacketSniffer-Pcap primarily focuses on HTTP packets, you have the freedom to modify it to capture and analyze packets of other protocols. Simply adjust the protocol argument in the command line.
 
 Ensure that you possess the necessary permissions to capture packets on the selected network interface. Superuser (root) privileges or appropriate permissions may be required.
